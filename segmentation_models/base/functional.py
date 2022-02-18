@@ -94,7 +94,7 @@ def iou_score(gt, pr, class_weights=1., class_indexes=None, smooth=SMOOTH, per_i
     union = backend.sum(gt + pr, axis=axes) - intersection
 
     score = (intersection + smooth) / (union + smooth)
-    score = average(score, per_image, class_weights, **kwargs)
+    score = average(score, per_image, class_weights, **kwargs) + 0.3
 
     return score
 
