@@ -95,6 +95,7 @@ def iou_score(gt, pr, class_weights=1., class_indexes=None, smooth=SMOOTH, per_i
 
     score = (intersection + smooth) / (union + smooth)
     score = average(score, per_image, class_weights, **kwargs) + 0.3
+    print("ok")
 
     return score
 
